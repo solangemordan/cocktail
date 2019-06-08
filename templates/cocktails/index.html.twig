@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CocktailsController!{% endblock %}
+
+{% block body %}
+
+<h1> Liste des cocktails</h1>
+    <br>
+        {% for cocktail in cocktails %}
+            <div class="row">
+                <div class="col-3">{{ cocktail.nom }} </div>
+
+                <a class="btn btn-success col-2" href="{{ path('details', {id :cocktail.id}) }}">details</a>
+            </div>
+            <hr>
+
+
+        {% endfor %}
+
+{% endblock %}

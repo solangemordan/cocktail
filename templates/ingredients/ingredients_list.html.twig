@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IngredientsController!{% endblock %}
+
+{% block body %}
+
+    <h1> Liste des ingrédients</h1>
+
+    <br>
+    {% for ingredient in ingredients %}
+
+        <h3> Nom : {{ ingredient.nom }}</h3>
+        <h4>Cocktails associés : </h4>
+
+        <ul>
+            {% for cock in ingredient.cocktails %}
+                <li>{{ cock.nom }}</li>
+            {% endfor %}
+        </ul>
+        <hr>
+    {% endfor %}
+{% endblock %}

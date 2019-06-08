@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <h3 class="col-3">NOM</h3>
+        <h3 class="col-3">CATEGORIE</h3>
+        <h3 class="col-3">PRIX</h3>
+        <h3 class="col-3">VOLUME</h3>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-3">{{ cocktail.nom }}</div>
+        <div class="col-3">{{ cocktail.category}}</div>
+        <div class="col-3">{{ cocktail.prix }}</div>
+        <div class="col-3">{{ cocktail.volume }}</div>
+    </div>
+    <br>
+    <div class="row">
+        <h3 class="col-3">ORIGINE</h3>
+        <h3 class="col-3">IMAGE</h3>
+        <h3 class="col-3">DESCRIPTION</h3>
+        <h3 class="col-3">INGREDIENTS</h3>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-3">{{ cocktail.origine }}</div>
+        <div class="col-3"><img width="175px" src="{{ cocktail.imageUrl }}" alt=""></div>
+        <div class="col-3">{{ cocktail.description | raw}}</div>
+        <div class="col-3">
+            {% for ingredient in cocktail.ingredients %}
+
+                <div>{{ ingredient.nom }}</div>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+
+        <a class="btn btn-danger" href="{{ path('delete', {id:cocktail.id}) }}">delete</a>
+        <a class="btn btn-success" href="{{ path('update', {id:cocktail.id}) }}">modifier</a>
+
+    </div>
+
+
+
+
+
+{% endblock %}

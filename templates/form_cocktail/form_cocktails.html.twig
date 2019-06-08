@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Hello FormCocktailController!{% endblock %}
+
+{% block body %}
+    <h1> Créez votre propre cocktail</h1>
+
+    <br>
+    {{ form_start(form) }}
+    {{ form_row(form.nom, {'attr' : {'placeholder' : 'nom'}}) }}
+    {{ form_row(form.description, {'attr' : {'placeholder' : 'description'}}) }}
+    {{ form_row(form.prix, {'attr' : {'placeholder' : 'prix'}}) }}
+    {{ form_row(form.volume, {'attr' : {'placeholder' : 'volume'}}) }}
+    {{ form_row(form.origine, {'attr' : {'placeholder' : 'origine'}}) }}
+    {{ form_row(form.imageUrl, {'attr' : {'placeholder' : 'image'}}) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.ingredients) }}
+
+
+    {{ form_end(form) }}
+{% endblock %}
